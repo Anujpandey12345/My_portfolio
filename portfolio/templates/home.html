@@ -1,19 +1,29 @@
 {% load static%}
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK AUTH </title>
+    <title>AK AUTH</title>
     <link rel="icon" type="image/x-icon" href="./Images/favicon.jpeg">
     <link rel="stylesheet" href="{%static 'css/style.css'%}">
-    
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body>`
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">
+                {% if message.tags == 'success' %}
+                    <div class="aalert alert-warning">{{ message }}</div>
+                {% else %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
     
     <!-- Navbar Section -->
     <nav id="navbar" class="flex s-around bg-color">
@@ -21,7 +31,11 @@
             <h2 class="t-white">AK AUTH</h2>
         </div>
         <div class="right-nav">
-            <ul class="flex">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkBtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="flex nav-menu">
                 <li><a href="#home" class="t-white roboto">Home <i class="fa-solid fa-house"></i></a></li>
                 <li><a href="#about" class="t-white roboto">About Me <i class="fa-solid fa-user"></i></a></li>
                 <li><a href="#skills" class="t-white roboto">Skills <i class="fa-solid fa-code"></i></a></li>
@@ -31,49 +45,39 @@
         </div>
     </nav>
 
-        
-
     <!-- Home Section -->
-    <section id="home" class="flex s-around sw-80 m-auto">
+    <section id="home" class="flex s-around m-auto">
         <div class="home-left flex items-center">
             <div class="home-content">
                 <h6 class="poppinss">Hi, I'm</h6>
                 <h1 class="t-white">Anuj Kumar</h1>
                 <h4 class="poppinss">Backend - Developer</h4>
-                <a href="{% static 'pdf/django.pdf' %}"  target="_blank">
-                    <button class="btn poppins">Resume</button></a>
-                    
-                <a class="btn live poppins" id="hireme" href="https://x.com/aanujdotcom"
-                    target="_blank">Let's Talk</a>
+                <a href="{% static 'pdf/django.pdf' %}" target="_blank">
+                    <button class="btn poppins">Resume</button>
+                </a>
+                <a class="btn live poppins" id="hireme" href="https://x.com/aanujdotcom" target="_blank">Let's Talk</a>
             </div>
         </div>
         <div class="home-right flex s-center items-center">
             <div class="circle flex s-center items-center" id="mainImage">
-               
-                <img src="{% static 'images/mypic.png'%}" alt="">
+                <img src="{% static 'images/mypic.png'%}" alt="Anuj Kumar">
             </div>
-
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h1 class="t-center my-2 t-white f-2">About Me</h1>
-        <div class="about-container flex s-around ">
-            <div class=" about-left flex s-center items-center">
-                <!-- Here in src replade the given link with your secondary image link -->
-                <img src="{%static 'images/com.png'%}" alt="" style="width: 60%;">
+        <div class="about-container flex s-around">
+            <div class="about-left flex s-center items-center">
+                <img src="{%static 'images/com.png'%}" alt="Computer Image">
             </div>
 
             <div class="about-right flex">
                 <div class="about-content">
                     <h1 class="t-white m-b-1 poppins">Anuj Kumar</h1>
-                    <p class="t-white poppins">My name is Anuj kumar.I’m a MCA student.
-                        
-                        
-                        I am fresher, I’m passionate about creating quality products that meet all of the customer’s needs, and I love learning new techniques and technologies that allow me to make that happen.While I generally enjoy all of my job, the part I find most draining is estimating projects for customers. I don’t mind doing it, but I enjoy actually creating the software much more.</p>
-                    <a class="btn " id="hireme"
-                        href="https://codolio.com/profile/anuj01">Hire Me(Codolio)</a>
+                    <p class="t-white poppins">My name is Anuj kumar. I'm a MCA student. I am fresher, I'm passionate about creating quality products that meet all of the customer's needs, and I love learning new techniques and technologies that allow me to make that happen. While I generally enjoy all of my job, the part I find most draining is estimating projects for customers. I don't mind doing it, but I enjoy actually creating the software much more.</p>
+                    <a class="btn" id="hireme" href="https://codolio.com/profile/anuj01">Hire Me(Codolio)</a>
                 </div>
             </div>
         </div>
@@ -82,90 +86,68 @@
     <!-- Skills Section -->
     <section id="skills">
         <h1 class="t-center my-2 t-white f-2">Skills</h1>
-        <div class="services-container flex s-around h-50">
-        <div class=" skills-left flex s-center items-center">
-            <img src="{%static 'images/comp1.png'%}" alt="">
-        </div>
-
-        <div class="skills-right flex items-center">
-            <div class="skillss-container">
-                <div class="java bar p-relative"><span class="bar-content left t-white"> C/C++</span><span
-                        class="bar-content right-skills t-white">90%</span></div>
-                <div class="html bar p-relative"><span class="bar-content left t-white">Python/Django</span><span
-                        class="bar-content right-skills t-white">90%</span></div>
-                <div class="css bar p-relative"><span class="bar-content left t-white">PostgreSQL</span><span
-                        class="bar-content right-skills t-white">80%</span></div>
-                <div class="js bar p-relative"><span class="bar-content left t-white">Kafka</span><span
-                        class="bar-content right-skills t-white">60%</span></div>
-                <div class="python bar p-relative"><span class="bar-content left t-white">DRF</span><span
-                        class="bar-content right-skills t-white">50%</span></div>
-                <div class="mysql bar p-relative"><span class="bar-content left t-white">Flask</span><span
-                        class="bar-content right-skills t-white">40%</span></div>        
+        <div class="services-container flex s-around">
+            <div class="skills-left flex s-center items-center">
+                <img src="{%static 'images/comp1.png'%}" alt="Computer Skills">
             </div>
-        </div>
+
+            <div class="skills-right flex items-center">
+                <div class="skillss-container">
+                    <div class="java bar p-relative"><span class="bar-content left t-white">C/C++</span><span class="bar-content right-skills t-white">90%</span></div>
+                    <div class="html bar p-relative"><span class="bar-content left t-white">Python/Django</span><span class="bar-content right-skills t-white">90%</span></div>
+                    <div class="css bar p-relative"><span class="bar-content left t-white">PostgreSQL</span><span class="bar-content right-skills t-white">80%</span></div>
+                    <div class="js bar p-relative"><span class="bar-content left t-white">Kafka</span><span class="bar-content right-skills t-white">60%</span></div>
+                    <div class="python bar p-relative"><span class="bar-content left t-white">DRF</span><span class="bar-content right-skills t-white">50%</span></div>
+                    <div class="mysql bar p-relative"><span class="bar-content left t-white">Flask</span><span class="bar-content right-skills t-white">40%</span></div>        
+                </div>
+            </div>
         </div>
     </section>
 
-    
-
     <!-- Projects Section -->
     <section id="Projects">
-        <h1 class=" t-center my-2 t-white f-2">Projects</h1>
+        <h1 class="t-center my-2 t-white f-2">Projects</h1>
         <div class="projects-container flex s-center">
             <div class="projects-item flex f-col s-center items-center">
-               
                 <h1 class="t-white poppins">Amazone-clone</h1>
-                <p class="t-white poppins"> This is a functional shopping app intended to be a clone of Amazon and some of its features. This is clone is mixed with my design style and features that I thought would make it look better. This was created with React and incorporates Firebase Cloud firestore , firebase authentication, and accepts payments through Stripe.</p>
+                <p class="t-white poppins">This is a functional shopping app intended to be a clone of Amazon and some of its features. This is clone is mixed with my design style and features that I thought would make it look better. This was created with React and incorporates Firebase Cloud firestore, firebase authentication, and accepts payments through Stripe.</p>
                 <div class="buttons flex s-around">
-                    <a href=""
-                        target="_blanks" class="btn mx-1 m-top">GitHub</a>
-                    <a href="" target="_blanks" class="btn m-top live">Live
-                        Link</a>
+                    <a href="#" target="_blank" class="btn mx-1 m-top">GitHub</a>
+                    <a href="#" target="_blank" class="btn m-top live">Live Link</a>
                 </div>
             </div>
             <div class="projects-item flex f-col s-center items-center">
-               
-                <h1 class="t-white poppins">authentication App</h1>
-                <p class="t-white poppins">This is My authentication website which is created with HTML,CSS and Django which describe my skill and knowledge.My authentication website showcases my work in a sleek and minimalist design, allowing the focus to be on the content itself. The layout is uncluttered, making it easy for visitors to navigate and explore my projects.</p>
+                <h1 class="t-white poppins">Authentication App</h1>
+                <p class="t-white poppins">This is My authentication website which is created with HTML,CSS and Django which describe my skill and knowledge. My authentication website showcases my work in a sleek and minimalist design, allowing the focus to be on the content itself. The layout is uncluttered, making it easy for visitors to navigate and explore my projects.</p>
                 <div class="buttons flex s-around">
-                    <a href="https://github.com/Anujpandey12345/Authentication_site" target="_blanks"
-                        class="btn mx-1 m-top">GitHub</a>
-                    <a href="#" target="_blanks" class="btn m-top live">Live
-                        Link</a>
+                    <a href="https://github.com/Anujpandey12345/Authentication_site" target="_blank" class="btn mx-1 m-top">GitHub</a>
+                    <a href="#" target="_blank" class="btn m-top live">Live Link</a>
                 </div>
             </div>
-            
-            
-           
-         </div>
-
         </div>
     </section>
 
     <!-- Contact Me Section -->
     <section id="Contact" class="m-b-1">
-        <h1 class=" t-center my-2 t-white f-2">Contact Me -> Leave  your Details for connect with me </h1>
+        <h1 class="t-center my-2 t-white f-2">Contact Me -> Leave your Details for connect with me</h1>
         <div class="contact-container flex s-around items-centers">
             <div class="form" id="contactForm">
-                <form method="post" > 
+                <form method="post"> 
                     {% csrf_token %}
                     <div class="name form-div">
                         <input type="text" name="name" id="name" class="poppins" placeholder="Enter Your Name">
                     </div>
 
                     <div class="email form-div">
-                        <input type="email" name="email" id="" class="poppins" placeholder="Enter Your Email"
-                            required>
+                        <input type="email" name="email" id="" class="poppins" placeholder="Enter Your Email" required>
                     </div>
 
                     <div class="phone form-div">
-                        <input type="phone" name="number" id="" class="poppins" placeholder="Enter Your Phone"
-                            required>
+                        <input type="phone" name="number" id="" class="poppins" placeholder="Enter Your Phone" required>
                     </div>
                     
                     <div class="textarea form-div">
-                        <textarea name="content" id="textarea" cols="30" rows="10" class="poppins"
-                            placeholder="Enter Messages"></textarea>
+                        <textarea name="content" id="textarea" cols="30" rows="10" class="poppins" placeholder="Enter Messages"></textarea>
                     </div>
                     <button type="submit" class="btn poppins" id="submit">Send</button>
                 </form>
@@ -175,14 +157,14 @@
 
     <!-- Footer Section -->
     <footer id="footer">
-        <ul class="flex s-center w-80 m-auto my-2 res">
+        <ul class="flex s-center w-80 m-auto my-2 footer-menu">
             <li><a href="#home" class="poppinss">Home</a></li>
             <li><a href="#about" class="poppinss">About</a></li>
             <li><a href="#skills" class="poppinss">Skills</a></li>
             <li><a href="#projects" class="poppinss">Projects</a></li>
             <li><a href="#portfolio" class="poppinss">Portfolio</a></li>
         </ul>
-        <ul class="flex s-center w-80 font-awesome ">
+        <ul class="flex s-center w-80 font-awesome">
             <a href="https://www.linkedin.com/in/connectanujkumar/" target="_blank">
                 <li><i class="fa-brands fa-linkedin-in"></i></li>
             </a>
@@ -190,9 +172,7 @@
                 <li><i class="fa-brands fa-github"></i></li>
             </a>
         </ul>
-        <p class="t-center my-2 poppins">&copy; All Rights Reserved - <span class="cpy-white poppins">Error By AK AUTH 
-                </span></p>
-
+        <p class="t-center my-2 poppins">&copy; All Rights Reserved - <span class="cpy-white poppins">Error By AK AUTH</span></p>
     </footer>
      
 </body> 

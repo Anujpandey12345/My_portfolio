@@ -3,6 +3,9 @@
 
 body {
     background-color: #1f1f38;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 * {
@@ -13,6 +16,7 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Navbar styling */
 #navbar {
     line-height: 4rem;
     position: sticky;
@@ -22,10 +26,12 @@ body {
     border-bottom: .5px solid #ffffff52;
     border-width: 80%;
     margin-bottom: 1rem;
+    padding: 0 5%;
 }
 
 #navbar ul {
     list-style: none;
+    display: flex;
 }
 
 #navbar ul li {
@@ -35,66 +41,59 @@ body {
 #navbar ul li a {
     text-decoration: none;
     padding: 0.5rem 0.9rem;
-
-}
-
-.right {
-    display: none;
 }
 
 .checkBtn {
     display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
 }
 
 #check {
     display: none;
 }
 
-.nav-col a:hover {
+.nav-menu a:hover {
     border-radius: .4rem;
     color: #1f1f38;
     background-color: #fff;
 }
 
-
 /* Home Section */
-.home-left,
-.home-right {
-    width: 30%;
-    padding: 7rem;
+#home {
+    flex-wrap: wrap;
+    padding: 0 5%;
 }
 
-.home-right {
-    padding: 0;
+.home-left, .home-right {
+    width: 50%;
+    padding: 2rem;
 }
 
-.home-left h6,
-h4 {
+.home-left h6, h4 {
     color: rgb(216, 117, 173);
     margin: 1rem 0;
     margin-left: 3px;
-    font-size: 5rem;
+    font-size: 1.5rem;
 }
 
 .home-left h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 
 .home-right {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-right img {
-    position: absolute;
-    width:170%;
-    left: 40px;
-    top: -50px;
-    background-size: cover;
-    border-radius: 84%;
-    height: 150%;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
 }
-    
-
 
 .circle {
     width: 17rem;
@@ -102,25 +101,28 @@ h4 {
     border-radius: 50%;
     padding: .5rem;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* About Section */
-.about-left,
-.about-right {
-    width: 60%;
+#about {
+    padding: 0 5%;
 }
 
-.about-right {
-    padding-right: 4rem;
+.about-container {
+    flex-wrap: wrap;
 }
 
-.aboout-left {
-    position: relative;
+.about-left, .about-right {
+    width: 100%;
+    padding: 1rem;
 }
 
 .about-left img {
     width: 100%;
-    height: 400px;;
+    max-width: 400px;
     border-radius: 1rem;
 }
 
@@ -128,27 +130,52 @@ h4 {
     margin-bottom: 2rem;
 }
 
-
-/* Skills */
+/* Skills Section */
 #skills {
     margin-top: 3rem;
+    padding: 0 5%;
+}
+
+.services-container {
+    flex-wrap: wrap;
+}
+
+.skills-left, .skills-right {
+    width: 100%;
 }
 
 .skills-left {
-    width: 50%;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .skills-left img {
     width: 85%;
-}
-
-.skills-right {
-    width: 50%;
+    max-width: 400px;
 }
 
 .skillss-container {
     width: 100%;
 }
+
+.bar {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.bar-content {
+    position: absolute;
+    bottom: 10px;
+}
+
+.left {
+    left: 0;
+}
+
+.right-skills {
+    right: 0;
+}
+
 .java {
     width: 90%;
     height: .5rem;
@@ -168,7 +195,7 @@ h4 {
 .css {
     width: 80%;
     height: .5rem;
-    background-color:yellow;
+    background-color: yellow;
     margin: 1rem 0;
     border-radius: 12px;
 }
@@ -176,7 +203,7 @@ h4 {
 .js {
     width: 65%;
     height: .5rem;
-    background-color:red;
+    background-color: red;
     margin: 1rem 0;
     border-radius: 12px;
 }
@@ -197,36 +224,11 @@ h4 {
     border-radius: 12px;
 }
 
-.learning {
-    width: 100%;
-    height: .5rem;
-    background-color: #61dbfb;
-    margin: 1rem 0;
-    border-radius: 12px;
-}
-
-.bar {
-    margin: 2rem 0;
-}
-
-.bar-content {
-    position: absolute;
-    bottom: 10px;
-}
-
-.left {
-    left: 0;
-}
-
-.right-skills {
-    right: 0;
-}
-
-
-
-
-
 /* Projects Section */
+#Projects {
+    padding: 0 5%;
+}
+
 .projects-container {
     justify-content: center;
     align-items: center;
@@ -234,12 +236,10 @@ h4 {
     flex-wrap: wrap;
 }
 
-
-
-
 .projects-item {
     overflow: hidden;
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     margin: 1rem;
     background: #2c2c6c;
     border-radius: 1.5rem;
@@ -257,44 +257,47 @@ h4 {
     font-size: .9rem;
 }
 
+/* Contact Section */
+#Contact {
+    padding: 0 5%;
+}
 
-
-/* Contact me Section */
 .form {
     display: flex;
-    width: 80%;
-    padding: 0 2rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
     margin: auto;
     justify-content: center;
     align-items: center;
 }
 
-.form-div input,
-textarea {
+.form-div input, textarea {
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: .5rem;
     width: 100%;
     margin: 0.5rem 0rem;
     font-size: .9rem;
     background: transparent;
-    margin: 0.5rem 0rem;
     padding: 0.5rem 1rem;
     color: rgb(255, 255, 255);
     resize: none;
 }
 
-
-
-/* Footer Section  */
+/* Footer Section */
 #footer {
     background-color: #010101;
-    padding: 1%;
-    padding-bottom: 2rem;
+    padding: 1rem 5%;
+}
+
+.footer-menu {
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 ul li {
     list-style: none;
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 ul li a {
@@ -308,8 +311,9 @@ ul li a:hover {
     color: #fff;
 }
 
-
 .font-awesome {
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 1.1rem auto;
 }
 
@@ -332,10 +336,8 @@ ul li a:hover {
 
 #footer p {
     color: white;
-    font-size: .9srem;
+    font-size: .9rem;
 }
-
-
 
 /* Utility Classes */
 .poppins {
@@ -369,7 +371,6 @@ ul li a:hover {
 .f-col {
     flex-direction: column;
 }
-
 
 .p-relative {
     position: relative;
@@ -424,7 +425,7 @@ ul li a:hover {
 }
 
 .btn {
-    margin-left: 0 .5rem;
+    margin: 0.5rem;
     font-size: 1rem;
     color: #df77ad;
     cursor: pointer;
@@ -433,10 +434,15 @@ ul li a:hover {
     border-radius: 0.4rem;
     background: transparent;
     font-family: 'Poppins', sans-serif;
+    display: inline-block;
 }
 
-.buttons a,
-#hireme {
+.buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons a, #hireme {
     text-decoration: none;
 }
 
@@ -449,4 +455,110 @@ ul li a:hover {
 .live {
     color: #1f1f38;
     background-color: #da7fa8;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+    .home-left, .home-right {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .home-content {
+        text-align: center;
+    }
+
+    .circle {
+        width: 15rem;
+        height: 15rem;
+        margin: 0 auto;
+    }
+    
+    .about-left, .about-right {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .about-right {
+        padding: 1rem;
+    }
+    
+    .skills-left, .skills-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        padding: 0 5%;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #1f1f38;
+        top: 4rem;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        flex-direction: column;
+    }
+    
+    .checkBtn {
+        display: block;
+    }
+    
+    #check:checked ~ .nav-menu {
+        left: 0;
+    }
+    
+    #navbar ul li {
+        margin: 1rem 0;
+    }
+    
+    .home-left h1 {
+        font-size: 2rem;
+    }
+    
+    .home-left h6, h4 {
+        font-size: 1.2rem;
+    }
+    
+    .f-2 {
+        font-size: 1.5rem;
+    }
+    
+    .circle {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-left h1 {
+        font-size: 1.5rem;
+    }
+    
+    .home-left h6, h4 {
+        font-size: 1rem;
+    }
+    
+    .circle {
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .f-2 {
+        font-size: 1.2rem;
+    }
+    
+    ul li a {
+        font-size: 1rem;
+    }
 }
