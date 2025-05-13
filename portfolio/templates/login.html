@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e36; /* Dark navy background like the portfolio */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: #2a2a45;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .heading {
+            color: #e083b7; /* Pink/purple color from the portfolio */
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .subheading {
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e083b7; /* Pink/purple color from the portfolio */
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #3a3a5a;
+            background-color: #252540;
+            color: white;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #e083b7; /* Pink/purple color from the portfolio */
+        }
+        
+        button {
+            background-color: #e083b7; /* Pink/purple color from the portfolio */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 14px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #c96ea0;
+        }
+        
+        .forgot-password {
+            text-align: right;
+            margin: 10px 0 20px;
+        }
+        
+        .forgot-password a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            color: #e083b7;
+            text-decoration: underline;
+        }
+        
+        .create-account {
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+        }
+        
+        .create-account a {
+            color: #e083b7; /* Pink/purple color from the portfolio */
+            text-decoration: none;
+        }
+        
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Welcome Back!</div>
+        <div class="subheading">Log in to continue to AK AUTH</div>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required name="username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required name="password">
+            </div>
+            
+            
+            <button type="submit">Login</button>
+        </form>
+        
+        <div class="create-account">
+            Don't have an account? <a href="{% url 'singup' %}">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>
