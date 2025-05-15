@@ -609,19 +609,20 @@
     </style>
 </head>
 <body>
-    <!-- {% if messages %}
+   {% if messages %}
     <ul class="messages">
         {% for message in messages %}
             <li class="{{ message.tags }}">
-                {% if message.tags == 'success' %}
-                    <div class="aalert alert-warning">{{ message }}</div>
+                {% if 'success' in message.tags %}
+                    <div class="alert alert-success">{{ message }}</div>
                 {% else %}
                     <div class="alert alert-danger">{{ message }}</div>
                 {% endif %}
             </li>
         {% endfor %}
     </ul>
-    {% endif %} -->
+{% endif %}
+
     
     <!-- Navbar Section -->
     <nav id="navbar" class="flex s-around bg-color">
