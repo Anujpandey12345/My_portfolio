@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,16 +75,47 @@ WSGI_APPLICATION = 'project_port.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio',
+#         'USER': 'postgres',
+#         'PASSWORD': 'anuj',
+#         'HOST': 'localhost',
+# #         'PORT': '5432',
+# #     }
+# # }
+# import os
+# import dj_database_url
+
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         os.environ.get('DATABASE_URL')
+#     )
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'anuj',
-        'HOST': 'localhost',
+        'NAME': 'portfolio_2y26',
+        'USER': 'portfolio_2y26_user',
+        'PASSWORD': '7sOY1ewPMKjQXDM50UKbj45SldXgoiPI',
+        'HOST': 'dpg-d0hmguadbo4c73dui92g-a.oregon-postgres.render.com',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        }
     }
 }
+
+
+import os
+import dj_database_url
+
+# DATABASES = {
+#     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
+
 
 
 # Password validation
