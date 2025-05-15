@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, logout, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from portfolio import models
+from django.contrib import messages
 
 # Contact View
 def contact(request):
