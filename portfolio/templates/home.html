@@ -609,20 +609,19 @@
     </style>
 </head>
 <body>
-   {% if messages %}
+    {% if messages %}
     <ul class="messages">
         {% for message in messages %}
             <li class="{{ message.tags }}">
-                {% if 'success' in message.tags %}
-                    <div class="alert alert-success">{{ message }}</div>
+                {% if message.tags == 'success' %}
+                    <div class="aalert alert-warning">{{ message }}</div>
                 {% else %}
                     <div class="alert alert-danger">{{ message }}</div>
                 {% endif %}
             </li>
         {% endfor %}
     </ul>
-{% endif %}
-
+    {% endif %}
     
     <!-- Navbar Section -->
     <nav id="navbar" class="flex s-around bg-color">
@@ -659,7 +658,7 @@
         </div>
         <div class="home-right flex s-center items-center">
             <div class="circle flex s-center items-center" id="mainImage">
-                <!-- <img src="mypic.png" alt="Anuj Kumar"> -->
+                <img src="mypic.png" alt="Anuj Kumar">
             </div>
         </div>
     </section>
@@ -669,7 +668,7 @@
         <h1 class="t-center my-2 t-white f-2">About Me</h1>
         <div class="about-container flex s-around">
             <div class="about-left flex s-center items-center">
-                <!-- <img src="com.png" alt="Computer Image"> -->
+                <img src="com.png" alt="Computer Image">
             </div>
 
             <div class="about-right flex">
@@ -687,7 +686,7 @@
         <h1 class="t-center my-2 t-white f-2">Skills</h1>
         <div class="services-container flex s-around">
             <div class="skills-left flex s-center items-center">
-                <!-- <img src="comp1.png" alt="Computer Skills"> -->
+                <img src="comp1.png" alt="Computer Skills">
             </div>
 
             <div class="skills-right flex items-center">
